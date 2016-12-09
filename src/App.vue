@@ -2,16 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
+    <clockpicker data-autoclose="true"></clockpicker>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
+import Clockpicker from './components/Clockpicker'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Hello,
+    Clockpicker
   }
 }
 </script>
