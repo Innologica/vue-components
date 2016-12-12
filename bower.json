@@ -1,0 +1,24 @@
+{
+  "name": "vue-components-smartadmin",
+  "description": "Vue JS components from SmartAdmin template",
+  "main": [
+    "./dist/vue-component.js"
+  ],
+  "authors": [
+    "Nikola Kostadinov <nikolakk@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "components"
+  ],
+  "homepage": "https://github.com/Innologica/vue-components",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ]
+}

@@ -1,4 +1,11 @@
-import Hello from './components/Hello.vue'
+import Clockpicker from './components/Clockpicker.vue'
 
-export default Hello
-export { Hello }
+const SmartAdminComponents = {
+  Clockpicker,
+
+  install (Vue) {
+    Vue.components('clockpicker', Clockpicker)
+  }
+}
+
+module.exports = SmartAdminComponents
