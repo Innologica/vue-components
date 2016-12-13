@@ -4,7 +4,10 @@
     <hello></hello>
     <clockpicker data-autoclose="true"></clockpicker>
     <modal-dialog :show="dialog" :onClose="close">
-      <h1>TEST</h1>
+
+      <div>
+        <h1>TEST</h1>
+      </div>
     </modal-dialog>
     <button @click="openDialog">OPEN DIALOG</button>
 

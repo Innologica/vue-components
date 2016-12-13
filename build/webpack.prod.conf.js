@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
     path: config.build.assetsRoot,
     publicPath: config.build.assetsPublicPath,
-    filename: 'vue-component.js',
-    library: 'VueComponents',
+    filename: 'vue-components-smartadmin.js',
+    library: 'SmartAdminComponents',
     libraryTarget: 'umd'
 }
 
