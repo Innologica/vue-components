@@ -12,6 +12,14 @@
     <button @click="openDialog">OPEN DIALOG</button>
 
     <tag-select v-model="options"></tag-select>
+    <hr/>
+    <datepicker></datepicker>
+    <br/>
+    <div class="well">
+      <div class="col-md-6 col-md-offset-1">
+        <ion-range-slider></ion-range-slider>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +28,8 @@ import Hello from './components/Hello'
 import Clockpicker from './components/Clockpicker'
 import ModalDialog from './components/ModalDialog'
 import TagSelect from './components/TagSelect'
+import Datepicker from './components/Datepicker'
+import IonRangeSlider from './components/IonRangeSlider'
 
 export default {
   name: 'app',
@@ -27,7 +37,9 @@ export default {
     Hello,
     Clockpicker,
     ModalDialog,
-    TagSelect
+    TagSelect,
+    Datepicker,
+    IonRangeSlider
   },
   data: () => {
     return {
