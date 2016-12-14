@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
     <clockpicker data-autoclose="true"></clockpicker>
     <modal-dialog :show="dialog" :onClose="close">
 
@@ -11,12 +10,13 @@
     </modal-dialog>
     <button @click="openDialog">OPEN DIALOG</button>
 
-    <tag-select v-model="options"></tag-select>
+    <tag-select :options="options"></tag-select>
     <hr/>
     <datepicker></datepicker>
     <br/>
-    <div class="well">
-      <div class="col-md-6 col-md-offset-1">
+    <br/>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well well-lg">
         <ion-range-slider></ion-range-slider>
       </div>
     </div>
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
 import Clockpicker from './components/Clockpicker'
 import ModalDialog from './components/ModalDialog'
 import TagSelect from './components/TagSelect'
@@ -34,7 +33,6 @@ import IonRangeSlider from './components/IonRangeSlider'
 export default {
   name: 'app',
   components: {
-    Hello,
     Clockpicker,
     ModalDialog,
     TagSelect,
@@ -44,7 +42,10 @@ export default {
   data: () => {
     return {
       dialog: false,
-      options: {}
+      options: [
+        'nikola',
+        'kostadinov'
+      ]
     }
   },
   methods: {
