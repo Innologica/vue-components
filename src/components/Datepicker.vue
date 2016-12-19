@@ -3,17 +3,17 @@
 </template>
 
 <script>
-    import defaults from '../defaults'
+//    import defaults from '../defaults'
 
     export default {
         props: ['options', 'value'],
         mounted: function () {
             var vm = this
             var el = $(this.$el)
-            var options = $.extend(defaults.datepicker, this.options)
+//            var options = $.extend(defaults.datepicker, this.options)
 
             // init datepicker
-            el.datepicker(options)
+            el.datepicker(this.options)
             .datepicker('setDate', this.value)
             // emit event on change.
             .on('change', function () {

@@ -4,21 +4,19 @@
 </template>
 
 <script>
-  import defaults from '../defaults'
-  import clockpicker from 'clockpicker'
+//  import defaults from '../defaults'
 
   export default{
       template: '#clockpicker',
       props: ['options', 'value'],
       mounted: function () {
-          console.log(clockpicker)
           var vm = this
-          var options = $.extend(defaults.clockpicker, this.options)
+          // var options = $.extend(defaults.clockpicker, this.options)
 
           $(this.$el)
           .val(this.value)
           // init clockpicker
-          .clockpicker(options)
+          .clockpicker(this.options)
           // emit event on change.
           .on('change', function () {
               vm.$emit('input', this.value)
