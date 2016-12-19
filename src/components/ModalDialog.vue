@@ -78,32 +78,32 @@
 import Modal from './Modal.vue'
 
 export default {
-  components: { Modal },
+    components: { Modal },
 
-  props: {
-    show: Boolean,
-    onClose: Function,
-    onSave: Function,
-    title: {
-      type: String,
-      default: 'Dialog title'
+    props: {
+        show: Boolean,
+        onClose: Function,
+        onSave: Function,
+        title: {
+            type: String,
+            default: 'Dialog title'
+        },
+        modalClass: {
+            type: String,
+            default: 'modal-xs'
+        }
     },
-    modalClass: {
-      type: String,
-      default: 'modal-xs'
+    methods: {
+        close: function () {
+            this.onClose && this.onClose()
+        },
+        save: function () {
+            if (!this.onSave) {
+                console.warn('No callback for onSave event in modal!')
+            }
+            this.onSave && this.onSave()
+        }
     }
-  },
-  methods: {
-    close: function () {
-      this.onClose && this.onClose()
-    },
-    save: function () {
-      if (!this.onSave) {
-        console.warn('No callback for onSave event in modal!')
-      }
-      this.onSave && this.onSave()
-    }
-  }
 }
 
 </script>
