@@ -1,31 +1,33 @@
 <template>
-  <modal :show="show" :on-close="close">
-    <div class="modal-dialog" :class="[ modalClass ]">
-      <div class="modal-content">
-        <slot name="modal-header">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" @click="close">
-              ×
-            </button>
-            <h4 class="modal-title">{{title}}</h4>
-          </div>
-        </slot>
-        <div class="modal-body">
-          <slot></slot>
+    <modal :show="show" :on-close="close">
+        <div class="modal side-panel">
+            <div class="modal-dialog" :class="[ modalClass ]">
+                <div class="modal-content">
+                    <slot name="modal-header">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" @click="close">
+                                ×
+                            </button>
+                            <h4 class="modal-title">{{title}}</h4>
+                        </div>
+                    </slot>
+                    <div class="modal-body">
+                        <slot></slot>
+                    </div>
+                    <slot name="modal-footer">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" @click="close">
+                                Cancel
+                            </button>
+                            <button type="button" class="btn btn-primary" @click="save">
+                                Save
+                            </button>
+                        </div>
+                    </slot>
+                </div>
+            </div>
         </div>
-        <slot name="modal-footer">
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" @click="close">
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary" @click="save">
-              Save
-            </button>
-          </div>
-        </slot>
-      </div>
-    </div>
-  </modal>
+    </modal>
 </template>
 
 <style>
@@ -76,6 +78,7 @@
 
 <script>
 import Modal from './Modal.vue'
+import '../assets/slide-panel.css'
 
 export default {
     components: { Modal },

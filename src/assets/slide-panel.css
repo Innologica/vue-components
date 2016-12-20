@@ -1,0 +1,249 @@
+.modal.in.side-panel .modal-dialog {
+    -webkit-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.modal.in.side-panel .modal-content {
+    border: none;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: 1051;
+    width: 90%;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+
+    padding-top: 50px;
+    padding-bottom: 73px;
+}
+
+.modal.in.side-panel .modal-body {
+    height: 100%;
+    padding: 15px;
+    overflow: auto;
+}
+
+.modal.in.side-panel .modal-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 73px;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.6s;
+    -moz-transition: visibility 0s 0.6s;
+    transition: visibility 0s 0.6s;
+}
+
+.side-panel::after {
+    /* overlay layer */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+    -webkit-transition: background 0.3s 0.3s;
+    -moz-transition: background 0.3s 0.3s;
+    transition: background 0.3s 0.3s;
+}
+
+.side-panel.in {
+    visibility: visible;
+    -webkit-transition: visibility 0s 0s;
+    -moz-transition: visibility 0s 0s;
+    transition: visibility 0s 0s;
+}
+
+.side-panel.in::after {
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: background 0.3s 0s;
+    -moz-transition: background 0.3s 0s;
+    transition: background 0.3s 0s;
+}
+
+.modal.in.side-panel .modal-header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: rgba(255, 255, 255, 0.96);
+    z-index: 1050;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    -webkit-transition: top 0.3s 0s;
+    -moz-transition: top 0.3s 0s;
+    transition: top 0.3s 0s;
+}
+
+.modal-header h4.modal-title {
+   line-height: 1.1;
+}
+
+.modal.in.side-panel .modal-header, .modal.in.side-panel.from-left .modal-header {
+    top: -50px;
+}
+
+.modal.in.side-panel .modal-header {
+    right: 0;
+}
+
+.modal.in.side-panel.from-left .modal-header {
+    left: 0;
+}
+
+.modal.in.side-panel.in .modal-header {
+    top: 0;
+    -webkit-transition: top 0.3s 0.3s;
+    -moz-transition: top 0.3s 0.3s;
+    transition: top 0.3s 0.3s;
+}
+
+/*@media only screen and (min-width: 768px) {*/
+/*.modal.in.side-panel .modal-header {*/
+/*width: 70%;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (min-width: 1170px) {*/
+/*.modal.in.side-panel .modal-header {*/
+/*width: 50%;*/
+/*}*/
+/*}*/
+
+.side-panel-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60px;
+    /* image replacement */
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+.side-panel-close::before, .side-panel-close::after {
+    /* close icon created in CSS */
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    height: 3px;
+    width: 20px;
+    background-color: #424f5c;
+    /* this fixes a bug where pseudo elements are slighty off position */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.side-panel-close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.side-panel-close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.no-touch .side-panel-close:hover {
+    background-color: #424f5c;
+}
+
+.no-touch .side-panel-close:hover::before, .no-touch .side-panel-close:hover::after {
+    background-color: #ffffff;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.no-touch .side-panel-close:hover::before {
+    -webkit-transform: rotate(220deg);
+    -moz-transform: rotate(220deg);
+    -ms-transform: rotate(220deg);
+    -o-transform: rotate(220deg);
+    transform: rotate(220deg);
+}
+
+.no-touch .side-panel-close:hover::after {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.from-right .side-panel-container,
+.modal.side-panel .modal-content {
+    right: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+.from-left .side-panel-container {
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+
+.in .side-panel-container, .in.modal.in.side-panel .modal-content {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+@media only screen and (min-width: 768px) {
+    .side-panel-container, .modal.in.side-panel .modal-lg .modal-content {
+        width: 70%;
+    }
+    .side-panel-container, .modal.in.side-panel .modal-content {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .side-panel-container, .modal.in.side-panel .modal-lg .modal-content {
+        width: 50%;
+    }
+    .side-panel-container, .modal.in.side-panel .modal-content {
+        width: 30%;
+    }
+}
