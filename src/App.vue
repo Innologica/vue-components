@@ -24,7 +24,7 @@
             <tag-select :options="options"></tag-select>
 
             <h2 class="page-header">Modal</h2>
-            <modal-dialog :show="dialog" :onClose="close">
+            <modal-dialog :show="dialog" :onClose="close" transition="modal">
 
                 <div>
                     <h1>TEST</h1>

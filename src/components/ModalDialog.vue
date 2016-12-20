@@ -1,6 +1,6 @@
 <template>
-    <modal :show="show" :on-close="close">
-        <div class="modal side-panel">
+    <modal :show="show" :on-close="close" :transition="transition">
+        <div class="modal side-panel in">
             <div class="modal-dialog" :class="[ modalClass ]">
                 <div class="modal-content">
                     <slot name="modal-header">
@@ -78,7 +78,7 @@
 
 <script>
 import Modal from './Modal.vue'
-// import '../assets/slide-panel.css'
+import '../assets/slide-panel.css'
 
 export default {
     components: { Modal },
@@ -94,7 +94,8 @@ export default {
         modalClass: {
             type: String,
             default: 'modal-xs'
-        }
+        },
+        transition: String
     },
     methods: {
         close: function () {
