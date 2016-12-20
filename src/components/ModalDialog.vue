@@ -78,7 +78,7 @@
 
 <script>
 import Modal from './Modal.vue'
-import '../assets/slide-panel.css'
+// import '../assets/slide-panel.css'
 
 export default {
     components: { Modal },
