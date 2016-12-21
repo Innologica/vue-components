@@ -24,8 +24,7 @@
             <tag-select :options="options"></tag-select>
 
             <h2 class="page-header">Modal</h2>
-            <modal-dialog :show="dialog" :onClose="close" transition="modal">
-
+            <modal-dialog :show="dialog" :onClose="close" transition="slide" modal-class="side-panel">
                 <div>
                     <h1>TEST</h1>
                 </div>
@@ -34,7 +33,7 @@
 
             <h2 class="page-header">IonRangeSlider</h2>
             <div class="well well-lg">
-                <ion-range-slider></ion-range-slider>
+                <ion-range-slider v-model="progress"></ion-range-slider>
             </div>
         </div>
     </div>
@@ -62,7 +61,8 @@
                 options: [
                     'nikola',
                     'kostadinov'
-                ]
+                ],
+                progress: 51
             }
         },
         methods: {
@@ -77,14 +77,3 @@
 
 </script>
 
-<style>
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        /*text-align: center;*/
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-
-</style>

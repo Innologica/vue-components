@@ -16,7 +16,7 @@
             onClose: Function,
             transition: {
                 type: String,
-                default: 'modal'
+                default: 'scale'
             }
         },
         methods: {
