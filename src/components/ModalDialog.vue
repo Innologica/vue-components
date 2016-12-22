@@ -1,31 +1,29 @@
 <template>
-    <modal :show="show" :on-close="close" :transition="'slide'">
-        <div class="modal-dialog" :class="[ modalClass ]">
-            <transition name="slide" >
-                <div class="modal-content" v-show="show">
-                    <slot name="modal-header">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" @click="close">
-                                ×
-                            </button>
-                            <h4 class="modal-title">{{title}}</h4>
-                        </div>
-                    </slot>
-                    <div class="modal-body">
-                        <slot></slot>
+    <modal :show="show" :on-close="close" :transition="transition" :modal-class="modalClass">
+        <div class="modal-dialog" @click.stop>
+            <div class="modal-content">
+                <slot name="modal-header">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" @click="close">
+                            ×
+                        </button>
+                        <h4 class="modal-title">{{title}}</h4>
                     </div>
-                    <slot name="modal-footer">
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" @click="close">
-                                Cancel
-                            </button>
-                            <button type="button" class="btn btn-primary" @click="save">
-                                Save
-                            </button>
-                        </div>
-                    </slot>
+                </slot>
+                <div class="modal-body">
+                    <slot></slot>
                 </div>
-            </transition>
+                <slot name="modal-footer">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" @click="close">
+                            Cancel
+                        </button>
+                        <button type="button" class="btn btn-primary" @click="save">
+                            Save
+                        </button>
+                    </div>
+                </slot>
+            </div>
         </div>
     </modal>
 </template>
@@ -62,20 +60,38 @@
     }
 
     /*Side panel*/
-    .modal-dialog.side-panel .modal-content {
+    .modal-container.side-panel {
         border: none;
         position: fixed;
-        height: 100%;
         top: 0;
         right: 0;
         z-index: 1051;
         /*width: 30%;*/
+        border-radius: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    .modal-container.side-panel  .modal-dialog .modal-content {
+        width: 100%;
+        height: 100%;
+        right: 0;
+        margin: 0;
         padding-top: 50px;
         padding-bottom: 73px;
         border-radius: 0;
+        border: none;
     }
 
-    .modal-dialog.side-panel .modal-header {
+    .modal-container.side-panel  .modal-dialog {
+        position: absolute;
+        right: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .modal-container.side-panel  .modal-dialog .modal-header {
         position: absolute;
         width: 100%;
         height: 50px;
@@ -88,13 +104,13 @@
         left: 0;
     }
 
-    .modal-dialog.side-panel .modal-header .close {
+    .modal-container.side-panel .modal-dialog .modal-header .close {
         position: absolute;
         top: 20px;
         right: 15px;
     }
 
-    .modal-dialog.side-panel .modal-footer {
+    .modal-container.side-panel .modal-dialog .modal-footer {
         position: absolute;
         width: 100%;
         bottom: 0;
@@ -103,21 +119,21 @@
     }
 
     @media only screen and (min-width: 768px) {
-        .side-panel-container, .modal-dialog.side-panel .modal-lg .modal-content {
+        .modal-container.side-panel.modal-lg {
             width: 70%;
         }
 
-        .side-panel-container, .modal-dialog.side-panel .modal-content {
+        .modal-container.side-panel {
             width: 40%;
         }
     }
 
     @media only screen and (min-width: 1170px) {
-        .side-panel-container, .modal-dialog.side-panel .modal-lg .modal-content {
+        .modal-container.side-panel.modal-lg {
             width: 50%;
         }
 
-        .side-panel-container, .modal-dialog.side-panel .modal-content {
+        .modal-container.side-panel {
             width: 30%;
         }
     }
@@ -146,16 +162,14 @@
     /*Slide in*/
     .slide-enter, .slide-leave-active {
         transform: translateX(0);
-        /*visibility: hidden;*/
-        height: 100%;
     }
 
-    .slide-enter-active .modal-content,
-    .slide-leave-active .modal-content {
-        transform: translateX(100%);
-        visibility: visible;
-        height: 100%;
+    .slide-enter-active .modal-container,
+    .slide-leave-active .modal-container {
+        transform: translateX(110%);
+        transition: 0.3s ease-out;
     }
+
 
 </style>
 

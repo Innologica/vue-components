@@ -1,7 +1,7 @@
 <template>
     <transition :name="transition">
         <div class="modal-mask" @click="close" v-show="show">
-            <div class="modal-container" @click.stop>
+            <div class="modal-container" :class="[ modalClass ]">
                 <slot></slot>
             </div>
         </div>
@@ -17,7 +17,8 @@
             transition: {
                 type: String,
                 default: 'scale'
-            }
+            },
+            modalClass: String
         },
         methods: {
             close: function () {
