@@ -11,25 +11,16 @@
         </div>
 
         <div class="row" id="clockpicker">
-            <h2 class="page-header">Clockpicker</h2>
-            <p>Clockpicker component wrapper of <a href="https://github.com/weareoutman/clockpicker" target="_blank">
-                https://github.com/weareoutman/clockpicker</a></p>
+            <modal-demo></modal-demo>
 
-            <clockpicker data-autoclose="true"></clockpicker>
+            <clockpicker-demo></clockpicker-demo>
+
 
             <h2 class="page-header">Datepicker</h2>
             <datepicker></datepicker>
 
             <h2 class="page-header">Tag select (selectize)</h2>
             <tag-select :options="options"></tag-select>
-
-            <h2 class="page-header">Modal</h2>
-            <modal-dialog :show="dialog" :onClose="close" transition="slide" modal-class="side-panel">
-                <div>
-                    <h1>TEST</h1>
-                </div>
-            </modal-dialog>
-            <button @click="openDialog">OPEN DIALOG</button>
 
             <h2 class="page-header">IonRangeSlider</h2>
             <div class="well well-lg">
@@ -40,37 +31,29 @@
 </template>
 
 <script>
-    import Clockpicker from './components/Clockpicker'
-    import ModalDialog from './components/ModalDialog'
     import TagSelect from './components/TagSelect'
     import Datepicker from './components/Datepicker'
     import IonRangeSlider from './components/IonRangeSlider'
+    import ModalDemo from './demo/Modal.vue'
+    import ClockpickerDemo from './demo/Clockpicker.vue'
 
     export default {
         name: 'app',
         components: {
-            Clockpicker,
-            ModalDialog,
             TagSelect,
             Datepicker,
-            IonRangeSlider
+            IonRangeSlider,
+
+            ModalDemo,
+            ClockpickerDemo
         },
         data: () => {
             return {
-                dialog: false,
                 options: [
                     'nikola',
                     'kostadinov'
                 ],
                 progress: 51
-            }
-        },
-        methods: {
-            openDialog () {
-                this.dialog = true
-            },
-            close () {
-                this.dialog = false
             }
         }
     }
