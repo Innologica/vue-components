@@ -15,7 +15,6 @@
 
             <clockpicker-demo></clockpicker-demo>
 
-
             <h2 class="page-header">Datepicker</h2>
             <datepicker></datepicker>
 
@@ -26,6 +25,8 @@
             <div class="well well-lg">
                 <ion-range-slider v-model="progress"></ion-range-slider>
             </div>
+			
+			<switchbox-demo></switchbox-demo>
         </div>
     </div>
 </template>
@@ -36,6 +37,7 @@
     import IonRangeSlider from './components/IonRangeSlider'
     import ModalDemo from './demo/Modal.vue'
     import ClockpickerDemo from './demo/Clockpicker.vue'
+    import SwitchboxDemo from './demo/Switchbox.vue'
 
     export default {
         name: 'app',
@@ -45,7 +47,8 @@
             IonRangeSlider,
 
             ModalDemo,
-            ClockpickerDemo
+            ClockpickerDemo,
+            SwitchboxDemo
         },
         data: () => {
             return {
