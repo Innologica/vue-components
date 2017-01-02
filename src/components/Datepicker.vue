@@ -2,7 +2,7 @@
     <input :value="value" type="text"/>
 </template>
 
-<script type="">
+<script>
     import defaults from '../defaults'
 
     export default {
