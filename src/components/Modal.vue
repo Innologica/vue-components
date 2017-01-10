@@ -9,6 +9,8 @@
 </template>
 
 <script>
+    import {addClass, removeClass} from '../helpers/css.js'
+
     export default{
         template: '#modal-template',
         props: {
@@ -31,6 +33,15 @@
                     this.onClose()
                 }
             }.bind(this))
+        },
+        watch: {
+            show (value) {
+                if (value) {
+                    addClass('modal-open')
+                } else {
+                    removeClass('modal-open')
+                }
+            }
         }
     }
 
