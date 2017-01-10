@@ -1,6 +1,6 @@
 <template>
     <modal :show="show" :on-close="close" :transition="transition" :modal-class="modalClass">
-        <div class="modal-dialog" @click.stop>
+        <div class="modal-dialog" @click.stop :class="modalClass">
             <div class="modal-content">
                 <slot name="modal-header">
                     <div class="modal-header">
