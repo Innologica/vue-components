@@ -23,11 +23,11 @@
             modalClass: String
         },
         methods: {
-            close: function () {
+            close () {
                 this.onClose()
             }
         },
-        mounted: function () {
+        mounted () {
             document.addEventListener('keydown', function (e) {
                 if (this.show && e.keyCode === 27) {
                     this.onClose()
