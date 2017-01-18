@@ -15,8 +15,7 @@
 
             <clockpicker-demo></clockpicker-demo>
 
-            <h2 class="page-header">Datepicker</h2>
-            <datepicker></datepicker>
+            <datepicker-demo></datepicker-demo>
 
             <h2 class="page-header">Tag select (selectize)</h2>
             <tag-select :options="options"></tag-select>
@@ -33,22 +32,22 @@
 
 <script>
     import TagSelect from './components/TagSelect'
-    import Datepicker from './components/Datepicker'
     import IonRangeSlider from './components/IonRangeSlider'
     import ModalDemo from './demo/Modal.vue'
     import ClockpickerDemo from './demo/Clockpicker.vue'
     import SwitchboxDemo from './demo/Switchbox.vue'
+    import DatepickerDemo from './demo/Datepicker.vue'
 
     export default {
         name: 'app',
         components: {
             TagSelect,
-            Datepicker,
             IonRangeSlider,
 
             ModalDemo,
             ClockpickerDemo,
-            SwitchboxDemo
+            SwitchboxDemo,
+            DatepickerDemo
         },
         data: () => {
             return {
