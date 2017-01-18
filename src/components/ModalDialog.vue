@@ -38,6 +38,7 @@
         height: 100%;
         background-color: rgba(0, 0, 0, .5);
         transition: opacity .2s ease;
+        overflow: auto;
     }
 
     .modal-container {
