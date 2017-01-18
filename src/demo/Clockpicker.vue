@@ -4,7 +4,7 @@
         <p>Clockpicker component wrapper of <a href="https://github.com/weareoutman/clockpicker" target="_blank">
             https://github.com/weareoutman/clockpicker</a></p>
 
-        <clockpicker data-autoclose="true"></clockpicker>
+        <clockpicker v-model="time" data-autoclose="true"></clockpicker>
     </div>
 </template>
 
@@ -14,6 +14,11 @@
     export default {
         components: {
             Clockpicker
+        },
+        data () {
+            return {
+                time: new Date()
+            }
         }
     }
 </script>
