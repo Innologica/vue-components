@@ -17,7 +17,7 @@
         },
         data () {
             return {
-                time: new Date()
+                time: new Date(2017, 1, 1, 8, 5)
             }
         }
     }

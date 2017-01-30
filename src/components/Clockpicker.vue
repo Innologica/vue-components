@@ -23,7 +23,7 @@
           }
 
           $(this.$el)
-            .val(this.param ? this.param.getHours() + ':' + this.param.getMinutes() : this.value)
+            .val(this.param ? (this.param.getHours() <= 9 ? '0' : '') + this.param.getHours() + ':' + (this.param.getMinutes() <= 9 ? '0' : '') + this.param.getMinutes() : this.value)
             // init clockpicker
             .clockpicker(options)
             // emit event on change.
