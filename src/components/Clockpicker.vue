@@ -42,7 +42,7 @@
               this.param = this.value instanceof Date ? this.value : null
 
               // update value
-              $(this.$el).val(this.param ? this.param.getHours() + ':' + this.param.getMinutes() : value)
+              $(this.$el).val(this.param ? (this.param.getHours() <= 9 ? '0' : '') + this.param.getHours() + ':' + (this.param.getMinutes() <= 9 ? '0' : '') + this.param.getMinutes() : this.value)
           }
       },
       destroyed: function () {

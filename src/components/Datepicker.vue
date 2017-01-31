@@ -42,7 +42,6 @@
         },
         watch: {
             value (value) {
-                console.log(this.value)
                 this.param = this.value instanceof Date ? this.value : null
                 $(this.$el).datepicker('setDate', value)
             }
