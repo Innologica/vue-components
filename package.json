@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "A Vue.js project",
   "author": "Nikola Kostadinov <nikolakk@gmail.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
