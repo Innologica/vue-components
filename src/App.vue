@@ -26,6 +26,8 @@
             </div>
 			
 			<switchbox-demo></switchbox-demo>
+			
+			<activity-timeline></activity-timeline>
         </div>
     </div>
 </template>
@@ -37,12 +39,14 @@
     import ClockpickerDemo from './demo/Clockpicker.vue'
     import SwitchboxDemo from './demo/Switchbox.vue'
     import DatepickerDemo from './demo/Datepicker.vue'
+    import ActivityTimeline from './demo/ActivityTimeline'
 
     export default {
         name: 'app',
         components: {
             TagSelect,
             IonRangeSlider,
+            ActivityTimeline,
 
             ModalDemo,
             ClockpickerDemo,
