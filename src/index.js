@@ -5,6 +5,7 @@ import TagSelect from './components/TagSelect.vue'
 import Datepicker from './components/Datepicker.vue'
 import IonRangeSlider from './components/IonRangeSlider.vue'
 import Switchbox from './components/Switchbox.vue'
+import ActivityTimeline from './components/ActivityTimeline.vue'
 import defaults from './defaults'
 
 const SmartAdminComponents = {
@@ -16,6 +17,7 @@ const SmartAdminComponents = {
     Datepicker,
     IonRangeSlider,
     Switchbox,
+    ActivityTimeline,
 
     install (Vue) {
         Vue.component('Clockpicker', Clockpicker)
@@ -25,6 +27,7 @@ const SmartAdminComponents = {
         Vue.component('Datepicker', Datepicker)
         Vue.component('IonRangeSlider', IonRangeSlider)
         Vue.component('Switchbox', Switchbox)
+        Vue.component('ActivityTimeline', ActivityTimeline)
     }
 }
 

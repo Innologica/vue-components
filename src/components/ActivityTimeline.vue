@@ -1,38 +1,30 @@
 <template>
   <div>
-	<div class="smart-timeline" v-if="elements.length > 0">
+	<div class="smart-timeline" v-if="items.length > 0">
 	  <ul class="smart-timeline-list">
-		<li v-for="el in elements">
-		  <div class="smart-timeline-icon"><i :class="['fa ' + icon]"></i></div>
-		  <div class="smart-timeline-time"><small :title="el.time">{{ el.time }}</small></div>
-		  <div class="smart-timeline-content">
-			<p>
-			  <strong>{{ el.user }}</strong>
-			</p>
-			{{ el.content }}
-		  </div>
+		<li v-for="item in items">
+          <div class="smart-timeline-icon"><i :class="['fa ' + icon]"></i></div>
+		  <div class="smart-timeline-time" v-html="item.time"></div>
+		  <div class="smart-timeline-content" v-html="item.content"></div>
 		</li>
 	  </ul>
 	</div>
-	<p :class="emptyTextCssClass" v-else>{{ emptyTxt }}</p>
+	<p :class="emptyTextClass" v-else>{{ emptyText }}</p>
   </div>
 </template>
 <script>
   export default {
-      props: ['items', 'icon', 'emptyText', 'emptyTextCssClass'],
-      data () {
-        return {
-          elements: [],
-          emptyTxt: 'No activity data to show'
-        }
-      },
-      mounted () {
-        if (this.items) {
-          this.elements = this.items
-        }
-        if (this.emptyText) {
-          this.emptyTxt = this.emptyText
-        }
+      props: {
+        items: {
+          default: []
+        },
+        icon: {
+          default: 'fa-user'
+        },
+        emptyText: {
+          default: 'No activity data to show'
+        },
+        emptyTextClass: {}
       }
   }
 </script>

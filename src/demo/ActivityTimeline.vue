@@ -5,7 +5,7 @@
         <activity-timeline :items="items" :icon="icon"></activity-timeline>
 		<br />
 		<p>Default empty timeline message:</p>
-        <activity-timeline emptyTextCssClass="text-css"></activity-timeline>
+        <activity-timeline :items="emptyItems"></activity-timeline>
     </div>
 </template>
 
@@ -19,11 +19,13 @@
         data () {
             return {
                 items: [
-                  {time: '30 minutes ago', user: 'You', content: 'Updated the email address of James to james123@innologica.com.'},
-                  {time: '1 hour ago', user: 'Sam Wilson', content: 'Updated the description of event "Christmas Party".'},
-                  {time: 'today', user: 'John Welch', content: 'Accepted invitation to party.'}
+                  {time: '30 minutes ago', content: '<p><strong>You</strong></p>Updated the email address of James to james123@innologica.com.'},
+                  {time: '1 hour ago', content: '<p><strong>Tom Cruise</strong></p>Updated the description of event "Christmas Party".'},
+                  {time: 'today', content: '<p><strong>Samuel Jackson</strong></p>Accepted invitation to party.'}
+                  {time: 'yesterday', content: '<p><strong>Anna Kournikova</strong></p>Accepted the date invitation (woo hoo).'}
                 ],
-                icon: 'fa-users'
+                icon: 'fa-users',
+                emptyItems: []
             }
         }
     }
