@@ -18,7 +18,7 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal" @click="close">
                             Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="save">
+                        <button type="button" class="btn btn-primary" @click="save" v-show="onSave != null">
                             Save
                         </button>
                     </div>
@@ -205,12 +205,8 @@
                 this.onClose && this.onClose()
             },
             save: function () {
-                if (!this.onSave) {
-                    console.warn('No callback for onSave event in modal!')
-                }
                 this.onSave && this.onSave()
             }
         }
     }
-
 </script>

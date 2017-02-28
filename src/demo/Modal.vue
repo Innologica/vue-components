@@ -55,7 +55,7 @@
                         <td>onSave</td>
                         <td>Function</td>
                         <td class="text-muted">null</td>
-                        <td>Specify a callback function when the user clicks the save button of the dialog. You can perform save action here. Unless you have overridden the <code>footer</code> slot</td>
+                        <td>Specify a callback function when the user clicks the save button of the dialog. You can perform save action here, unless you have overridden the <code>footer</code> slot. If no callback function given, the 'Save' button won't be shown.</td>
                     </tr>
                     <tr>
                         <td>title</td>
