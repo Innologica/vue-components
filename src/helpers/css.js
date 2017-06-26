@@ -3,13 +3,13 @@
  */
 
 module.exports = {
-    addClass: function(CssClass) {
+    addClass: function (CssClass) {
         if (document.body.className.indexOf(CssClass) === -1) {
             document.body.className += ' ' + CssClass
         }
     },
 
-    removeClass: function(CssClass) {
+    removeClass: function (CssClass) {
         if (document.body.className.indexOf(CssClass) !== -1) {
             document.body.className = document.body.className.replace(CssClass, '')
         }
