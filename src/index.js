@@ -8,7 +8,7 @@ import Switchbox from './components/Switchbox.vue'
 import ActivityTimeline from './components/ActivityTimeline.vue'
 import defaults from './defaults'
 
-const SmartAdminComponents = {
+export default {
     defaults,
     Clockpicker,
     Modal,
@@ -31,4 +31,4 @@ const SmartAdminComponents = {
     }
 }
 
-module.exports = SmartAdminComponents
+export { Clockpicker, Modal, ModalDialog, TagSelect, Datepicker, IonRangeSlider, Switchbox, ActivityTimeline }
