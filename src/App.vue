@@ -17,52 +17,47 @@
 
             <datepicker-demo></datepicker-demo>
 
-            <h2 class="page-header">Tag select (selectize)</h2>
-            <tag-select :options="options"></tag-select>
+            <selectize-demo></selectize-demo>
 
             <h2 class="page-header">IonRangeSlider</h2>
             <div class="well well-lg">
                 <ion-range-slider v-model="progress"></ion-range-slider>
             </div>
-			
+
 			<switchbox-demo></switchbox-demo>
-			
+
 			<activity-timeline></activity-timeline>
+
         </div>
     </div>
 </template>
 
 <script>
-    import TagSelect from './components/TagSelect'
     import IonRangeSlider from './components/IonRangeSlider'
     import ModalDemo from './demo/Modal.vue'
     import ClockpickerDemo from './demo/Clockpicker.vue'
     import SwitchboxDemo from './demo/Switchbox.vue'
     import DatepickerDemo from './demo/Datepicker.vue'
     import ActivityTimeline from './demo/ActivityTimeline'
+    import SelectizeDemo from './demo/SelectizeDemo'
 
     export default {
         name: 'app',
         components: {
-            TagSelect,
             IonRangeSlider,
             ActivityTimeline,
 
             ModalDemo,
             ClockpickerDemo,
             SwitchboxDemo,
-            DatepickerDemo
+            DatepickerDemo,
+            SelectizeDemo
         },
         data: () => {
             return {
-                options: [
-                    'nikola',
-                    'kostadinov'
-                ],
                 progress: 51
             }
         }
     }
-
 </script>
 
