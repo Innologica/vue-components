@@ -57,7 +57,8 @@
     }
 
     .modal-body {
-        margin: 20px 0;
+        overflow: auto;
+        height: 100%;
     }
 
     /*Side panel*/
@@ -117,6 +118,8 @@
         bottom: 0;
         left: 0;
         height: 73px;
+        background-color: white;
+        z-index: 100;
     }
 
     @media only screen and (max-width: 768px) {

@@ -6,7 +6,25 @@
         </p>
         <modal-dialog :show="dialog" :onClose="close" transition="slide" modal-class="side-panel">
             <div>
-                <h1>TEST</h1>
+                <h1>TEST HEADER</h1>
+
+                <div id="lipsum">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus felis, suscipit ac tellus quis, ultrices porta orci. Maecenas congue turpis quis ex placerat, in vestibulum nibh efficitur. Nullam dictum semper quam vitae imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus massa nulla, scelerisque sit amet ornare vitae, fermentum quis sapien. Nullam in lacus sagittis, iaculis nisl ac, vulputate ex. Aliquam congue ligula a tincidunt eleifend. Pellentesque elit quam, pellentesque in dapibus a, commodo ut sapien.
+                    </p>
+                    <p>
+                        Proin risus justo, egestas at elementum ac, aliquet vel lorem. Curabitur tempus non felis in fringilla. Mauris mattis quam id purus imperdiet, ut imperdiet odio sollicitudin. Vivamus sit amet nibh est. Ut quis justo viverra, mollis sem et, laoreet felis. Proin facilisis pellentesque purus, sed euismod ex pretium gravida. Curabitur consectetur imperdiet mi, sit amet dictum nibh facilisis et. Aliquam rutrum dolor pulvinar, pulvinar neque a, gravida mauris. Aenean bibendum elit a mi pellentesque, volutpat semper lorem cursus. Nam pulvinar condimentum elit vel eleifend. Sed non augue viverra purus volutpat luctus.
+                    </p>
+                    <p>
+                        Nunc scelerisque semper mollis. Sed tempus, massa vel finibus dictum, nisi leo suscipit diam, at hendrerit ligula lorem nec tellus. Integer nisl libero, sagittis eu libero in, ultrices pellentesque magna. Cras commodo dignissim fringilla. Cras at lacus in est hendrerit accumsan. Integer molestie nunc sit amet tellus porta, id imperdiet est facilisis. Curabitur sit amet nulla molestie lorem ullamcorper vulputate ac vitae ex. Donec et turpis velit. Nunc luctus odio odio, non congue mauris pulvinar nec.
+                    </p>
+                    <p>
+                        Aenean non velit sit amet lorem fermentum mollis. Ut non tortor eu quam varius feugiat id in tellus. Sed mattis turpis ac eros tincidunt tempor. Ut vitae magna nec nisi pellentesque dictum. Suspendisse egestas, mi nec malesuada condimentum, diam diam bibendum nibh, et hendrerit velit felis eu eros. Vestibulum lobortis libero sem, eget vehicula nulla porta aliquet. Suspendisse varius massa a nibh rutrum, ut convallis dolor ultricies. Maecenas tincidunt lacinia mauris, ut tempus enim finibus eu. Nulla in mi nulla. Morbi placerat mi eu nulla consequat pharetra. Vivamus placerat interdum lacinia. Donec bibendum magna nulla, a luctus urna consectetur sit amet. Curabitur pellentesque dui in pretium ultricies. Sed sed metus velit.
+                    </p>
+                    <p>
+                        In consectetur vel velit sit amet dictum. Pellentesque lacinia neque eget odio placerat rhoncus. Phasellus id augue fringilla, egestas libero nec, pellentesque dolor. Curabitur ut mauris est. Duis varius vestibulum massa sed iaculis. Donec ut turpis in est ultricies laoreet. Morbi dui nisl, aliquam in varius quis, posuere et felis. Nunc ipsum metus, commodo eget lacinia non, mollis suscipit ex. Etiam bibendum vel tortor ac iaculis. Donec maximus tincidunt sem, in dapibus mauris ultricies id. Duis bibendum mattis orci sed elementum. In sed efficitur velit.
+                    </p></div>
+
             </div>
         </modal-dialog>
         <button @click="openDialog">OPEN DIALOG</button>
