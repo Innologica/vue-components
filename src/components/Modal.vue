@@ -49,7 +49,7 @@
 <style>
     .modal {
         display: block;
-        transition: opacity .1s ease;
+        transition: opacity .2s ease;
     }
 
     .modal-dialog  {

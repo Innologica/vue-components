@@ -109,6 +109,8 @@
     .side-panel.modal-dialog {
         position: absolute;
         right: 0;
+        left: auto;
+        visibility: visible;
         margin: 0;
         height: 100%;
         width: 100%;
