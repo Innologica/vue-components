@@ -1,9 +1,9 @@
 <template>
-    <transition :name="transition">
-        <div class="modal-mask" @click="close" v-show="show">
-            <div class="modal-container" :class="[ modalClass ]">
+    <transition name="fade">
+        <div class="modal" @click="close" v-show="show">
+            <transition :name="transition">
                 <slot></slot>
-            </div>
+            </transition>
         </div>
     </transition>
 </template>
@@ -11,7 +11,7 @@
 <script>
     import {addClass, removeClass} from '../helpers/css.js'
 
-    export default{
+    export default {
         template: '#modal-template',
         props: {
             show: Boolean,
@@ -44,5 +44,46 @@
             }
         }
     }
-
 </script>
+
+<style>
+    .modal {
+        display: block;
+        transition: opacity .1s ease;
+    }
+
+    .modal-dialog  {
+        transition: all .2s ease;
+    }
+
+    /*Scale in*/
+    .scale-enter, .scale-leave-active {
+        opacity: 0;
+    }
+
+    .scale-enter,
+    .scale-leave-active {
+        transform: scale(1.1);
+    }
+
+    /*Fade in*/
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .2s
+    }
+
+    /*Slide in*/
+    .slide-enter, .slide-leave {
+        transform: translateX(100%);
+    }
+
+    .slide-enter .modal-dialog,
+    .slide-leave-active .modal-dialog {
+        transform: translateX(0);
+        transition: all .2s ease;
+    }
+</style>

@@ -4,7 +4,7 @@
         <p>
             Vue JS implementation of bootstrap modal dialogs. Added side panel version.
         </p>
-        <modal-dialog :show="dialog" :onClose="close" transition="slide" modal-class="side-panel">
+        <modal-dialog :show="dialog" :onClose="close" :transition="transition" :modal-class="getClass">
             <div>
                 <h1>TEST HEADER</h1>
 
@@ -27,8 +27,29 @@
 
             </div>
         </modal-dialog>
-        <button @click="openDialog">OPEN DIALOG</button>
 
+        <div>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" value="" v-model="transition"> <i>none</i>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" value="slide" v-model="transition"> slide
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" value="fade" v-model="transition"> fade
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" value="scale" v-model="transition"> scale
+            </label>
+        </div>
+
+        <div>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="side-panel" v-model="side_panel"> Side panel
+            </label>
+        </div>
+
+        <button @click="openDialog">Open dialog</button>
         <h2>API</h2>
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
@@ -104,7 +125,9 @@
         },
         data: () => {
             return {
-                dialog: false
+                dialog: false,
+                transition: 'slide',
+                side_panel: true
             }
         },
         methods: {
@@ -114,6 +137,12 @@
             close () {
                 this.dialog = false
             }
+        },
+        computed: {
+            getClass () {
+                return this.side_panel ? 'side-panel' : ''
+            }
         }
     }
+
 </script>
