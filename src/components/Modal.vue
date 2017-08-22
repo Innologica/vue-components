@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div class="modal" @click="close" v-show="show">
+        <div class="modal modal-open" @click="close" v-show="show">
             <transition :name="transition">
                 <slot></slot>
             </transition>
@@ -47,9 +47,8 @@
 </script>
 
 <style>
-    .modal {
+    .modal.modal-open {
         display: block;
-        transition: opacity .2s ease;
     }
 
     .modal-dialog  {
